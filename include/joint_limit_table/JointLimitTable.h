@@ -33,6 +33,10 @@ namespace joint_limit_table{
     };
     const cnoid::LinkPtr getSelfJoint () const { return self_joint_; };
     const cnoid::LinkPtr getTargetJoint () const { return target_joint_; };
+    const std::vector<double>& lLimitTable() const { return llimit_table_;}
+    std::vector<double>& lLimitTable() { return llimit_table_;}
+    const std::vector<double>& uLimitTable() const { return ulimit_table_;}
+    std::vector<double>& uLimitTable() { return ulimit_table_;}
     double getLlimit (double target_joint_angle) const // [rad]
     {
       return getInterpolatedLimitAngle(target_joint_angle, true); // [rad]
